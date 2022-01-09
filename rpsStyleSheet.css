@@ -6,7 +6,6 @@ body{
     text-decoration-color: white;
 }
 #title{
-    /* border: 2px solid red; */
     font-family: "OCR A Std", monospace;
     text-align: center;
     text-decoration: underline;
@@ -14,9 +13,6 @@ body{
 .userOptions{
     display:flex;
     justify-content: space-around;
-    /* border: 2px solid red; */
-    /* margin-top: -50px; */
-    /* position:relative; */
     height:400px;
 }
 .cpuChoice{
