@@ -3,11 +3,41 @@
     <head>
         <meta charset="utf-8">
         <title>Odin console - RPS</title>
-        <script src="./rps.js"></script>
+        <script src="./rps.js" defer></script>
+        <link rel="stylesheet" href="rpsStyleSheet.css">
     </head>
     <body>
-        <h1>open console to play RPS</h1>
-        <h2>game() to start 5 round game</h2>
+        <div id="title">
+            <h1>&nbsp;ROCK PAPER SCISSORS&nbsp;</h1>
+        </div>
+        <div class="userOptions">
+            <div class="userOptions tr">
+                <!--button id="rock" >Rock</button>-->
+                <image id="rock" src="images/Rock.png"></image>
+            </div>
+            <div class="userOptions tr">
+                <!-- <button id="paper" >Paper</button> -->
+                <image id="paper" src="images/paper.png"></image>
+            </div>
+            <div class="userOptions tr">
+                <!-- <button id="scissors">Scissors</button> -->
+                <image id="scissors" src="images/scissors.png"></image>
+            </div>
+        </div>
+        <div class="scoreKeeper">
+            <div class="score">
+                <h3>USER:&nbsp;</h3>
+                <h3 id="userScore">0</h3>
+            </div>
+            <div class="score">
+                <h3>Ties:&nbsp;</h3>
+                <h3 id="tieScore">0</h3>
+            </div>
+            <div class="score">
+                <h3>CPU:&nbsp;</h3>
+                <h3 id="cpuScore">0</h3>
+            </div>
+        </div>
     </body>
 
 </html>

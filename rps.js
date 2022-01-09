@@ -19,15 +19,35 @@ function computerPlay(){
     return compChoice;
 }
 
+function clearCPUChoice(){
+    const choices = ["rock","paper","scissors"];
+    for(let i =0;i<choices.length;i++){
+        const cpuChoice=document.getElementById(`${choices[i]}`);
+        console.log(cpuChoice);
+        cpuChoice.classList.remove("cpuChoice");
+    }
+}
+ 
+function playRound(e){
+    e.stopPropagation();
+    clearCPUChoice();
+    
+    let playerSelection=e.target.id;
+    if (!playerSelection) return;
 
-
-function playRound(playerSelection, computerSelection){
+    let computerSelection = computerPlay();
     let playerWins=false;
+
     if(playerSelection.toLowerCase()==computerSelection.toLowerCase()){ 
         console.log("Both chose "+ computerSelection + " tie!");
-        return("tie");
+        let getScore=document.getElementById('tieScore');
+        getScore.textContent=1+parseInt(getScore.textContent);
     }else{
+        //const cpuChoices = document.querySelectorAll
+        const cpuChoice=document.getElementById(`${computerSelection.toLowerCase()}`);
         
+        //console.log(cpuChoice);
+        cpuChoice.classList.add("cpuChoice");
         switch(playerSelection.toLowerCase()){
             case "rock":
                 computerSelection=="Scissors"?playerWins=true:playerWins=false;
@@ -40,43 +60,78 @@ function playRound(playerSelection, computerSelection){
                 break;
         }
         console.log(playerWins?("You win! "+ playerSelection + " beats "+computerSelection):("You lose! " +computerSelection + " beats "+playerSelection));
-        return(playerWins);
+        setScore(playerWins);
     }
     
 }
-
-
-function game(){
-    let winCount=0;
-    let lossCount=0;
-
-    for(let i =0;i<5;i++){    
-        let computerSelection = computerPlay();
-        //console.log(computerSelection);
-        let playerSelection="";
-        do
-        playerSelection = prompt("Enter rock, paper or scissors or EXIT to quit");
-        while(playerSelection==null)
-
-        
-        if(playerSelection.toLowerCase()=="exit"){
-            break;
-        }
-        let results=(playRound(playerSelection, computerSelection));
-        if(results=="tie"){
-            console.log("tied");
-        }else if(results==true){
-            winCount++;
-        }
-        else if(results==false){
-            lossCount++;
+function setScore(playerWins){
+    let getScore;
+    if(playerWins){
+        getScore=document.getElementById('userScore');
+        const score = parseInt(getScore.textContent)
+        getScore.textContent=1+score;
+        if(score+1>=5){
+            alert("you win!");
+            resetScore();
         }
     }
-    console.log("number of wins "+ winCount);
-    console.log("number of loss "+ lossCount);
-    //console.log("number of ties: "+ (5-(winCount+lossCount)));
+    else{
+        getScore = document.getElementById('cpuScore');
+        const score = parseInt(getScore.textContent);
+        getScore.textContent=1+parseInt(getScore.textContent);            
+        if(score+1>=5){
+            alert("you lose!");
+            resetScore();
+            
+        }
+    }
 }
-function help(){
-    console.log("to play use game()\nThis will launch a game with 5 rounds!");
+
+function resetScore(){
+    let score=document.getElementById('userScore');
+    score.textContent=0;
+    score=document.getElementById('cpuScore');
+    score.textContent=0;
+    score=document.getElementById('tieScore');
+    score.textContent=0;
+    clearCPUChoice();
 }
+
+// function game(){
+//     let winCount=0;
+//     let lossCount=0;
+
+//     for(let i =0;i<5;i++){    
+//         let computerSelection = computerPlay();
+//         //console.log(computerSelection);
+//         let playerSelection="";
+//         do
+//         playerSelection = prompt("Enter rock, paper or scissors or EXIT to quit");
+//         while(playerSelection==null)
+
+        
+//         if(playerSelection.toLowerCase()=="exit"){
+//             break;
+//         }
+//         let results=(playRound(playerSelection, computerSelection));
+//         if(results=="tie"){
+//             console.log("tied");
+//         }else if(results==true){
+//             winCount++;
+//         }
+//         else if(results==false){
+//             lossCount++;
+//         }
+//     }
+//     console.log("number of wins "+ winCount);
+//     console.log("number of loss "+ lossCount);
+//     //console.log("number of ties: "+ (5-(winCount+lossCount)));
+// }
+function playRoundT(e){
+    console.log(e);
+    e.stopPropagation();
+}
+
+const options = document.querySelectorAll('.userOptions');
+options.forEach(option=>option.addEventListener('click',playRound));
 
