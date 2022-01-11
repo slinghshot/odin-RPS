@@ -1,6 +1,7 @@
 html{
-    background-color: rgb(41, 41, 37);
-    color:white;
+    background-color: rgb(73, 69, 78);
+    font-family: 'Bebas Neue', cursive;
+    color:rgb(235, 224, 224);
 }
 body{
     text-decoration-color: white;
@@ -34,9 +35,44 @@ body{
 
 .tr:hover img{
     display:block;
-    border:8px solid rgb(255, 255, 255);
+    transform:scale(1.05);
+    /* border:8px solid rgb(255, 255, 255) !important; */
     border-radius: 15px;
     /* box-shadow:  0 30px 40px rgba(0,0,0,.1); */
+}
+.userClicked{
+    transform: scale(1.1);
+    border-radius:15px;
+}
+.win{
+    border: 10px solid rgb(82, 175, 66) !important;
+}
+.loss{
+    border: 10px solid rgb(223, 37, 37) !important;
+}
+.tie{
+    border: 10px solid rgb(250, 142, 0) !important;
+}
+
+.uScore{
+    background-color: rgb(82, 175, 66);
+    color:black;
+    border-radius: 6px;
+    padding:0 10px 0 10px;
+    
+}
+.tScore{
+    background-color: rgb(250, 142, 0);
+    color:black;
+    border-radius: 6px;
+    padding: 0 10px 0 10px;
+}
+
+.cScore{
+    background-color: rgb(223, 37, 37);
+    color:black;
+    border-radius: 6px;
+    padding: 0 10px 0 10px;
 }
 
 .tr:active{
@@ -48,8 +84,46 @@ body{
 .scoreKeeper{
     display:flex;
     justify-content: space-around;
+    /* border: 2px solid red; */
+    padding-bottom: 20px;
 }
 .score{
     display:flex;
+    letter-spacing: 3px;
+    font-size: 15pt;
 }
 
+#history h2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    /* border:2px solid red; */
+}
+.historyList{
+    display:flex;
+    /* border:2px solid red; */
+}
+.child{
+    /* border:2px solid red; */
+    flex:1;
+}
+
+#history ol{
+    /* margin-left:50px; */
+    text-align:center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20pt;
+    line-height:1.5em;
+}
+
+.gameStatus{
+    border-radius: 10px;
+    transition: all 0.40s ease;
+    padding:1px;
+    letter-spacing: 4px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    /* background-color: yellow; */
+    color:black;
+}
