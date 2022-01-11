@@ -4,27 +4,31 @@
         <meta charset="utf-8">
         <title>Odin console - RPS</title>
         <script src="./rps.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="rpsStyleSheet.css">
+        
     </head>
     <body>
         <div id="title">
             <h1>&nbsp;ROCK PAPER SCISSORS&nbsp;</h1>
         </div>
         <div class="scoreKeeper">
-            <div class="score">
+            <div class="score" id="uScore">
                 <h3>USER:&nbsp;</h3>
                 <h3 id="userScore">0</h3>
             </div>
-            <div class="score">
+            <div class="score" id="tScore">
                 <h3>Ties:&nbsp;</h3>
                 <h3 id="tieScore">0</h3>
             </div>
-            <div class="score">
+            <div class="score" id="cScore">
                 <h3>CPU:&nbsp;</h3>
                 <h3 id="cpuScore">0</h3>
             </div>
         </div>
-        <div class="userOptions">
+        <div class="userOptions" id="userOptContainer">
             <div class="userOptions tr">
                 <!--button id="rock" >Rock</button>-->
                 <image id="rock" src="images/Rock.png"></image>
@@ -37,6 +41,24 @@
                 <!-- <button id="scissors">Scissors</button> -->
                 <image id="scissors" src="images/scissors.png"></image>
             </div>
+        </div>
+        <div class="gameStatus">
+            <h1 id="winnerStatus"></h1>
+        </div>
+        <div id="history">
+            <div class="historyList">
+                <div class="child"></div>
+                <div class="child">
+                    <h2 id="historyTitle" hidden>&nbsp;Previous Matches&nbsp;</h2>
+                    <ol id="historyOList">
+                        <!-- Score, and who won
+                        You won/lost | Your score: # | CPU score: #  -->
+
+                    </ol>
+                </div>
+                <div class="child"></div>
+            </div>
+
         </div>
         
     </body>
