@@ -16,31 +16,34 @@
         </div>
         <div class="scoreKeeper">
             <div class="score" id="uScore">
-                <h3>USER:&nbsp;</h3>
+                <h3 style="text-decoration: underline;">&nbsp;USER&nbsp;</h3>
                 <h3 id="userScore">0</h3>
             </div>
             <div class="score" id="tScore">
-                <h3>Ties:&nbsp;</h3>
+                <h3 style="text-decoration: underline;">&nbsp;Ties&nbsp;</h3>
                 <h3 id="tieScore">0</h3>
             </div>
             <div class="score" id="cScore">
-                <h3>CPU:&nbsp;</h3>
+                <h3 style="text-decoration: underline;">&nbsp;CPU&nbsp;</h3>
                 <h3 id="cpuScore">0</h3>
             </div>
         </div>
         <div class="userOptions" id="userOptContainer">
+            <div class="child"></div>
             <div class="userOptions tr">
                 <!--button id="rock" >Rock</button>-->
-                <image id="rock" src="images/Rock.png"></image>
+                <image class="choiceImgs" id="rock" src="images/Rock.png"></image>
             </div>
             <div class="userOptions tr">
                 <!-- <button id="paper" >Paper</button> -->
-                <image id="paper" src="images/paper.png"></image>
+                <image class="choiceImgs"  id="paper" src="images/paper.png"></image>
             </div>
             <div class="userOptions tr">
                 <!-- <button id="scissors">Scissors</button> -->
-                <image id="scissors" src="images/scissors.png"></image>
+                <image class="choiceImgs"  id="scissors" src="images/scissors.png"></image>
             </div>
+            <div class="child"></div>
+
         </div>
         <div class="gameStatus">
             <h1 id="winnerStatus"></h1>

@@ -62,7 +62,8 @@ function playRound(e){
     // console.log(e);
     
     let playerSelection=e.target.id;
-    if (playerSelection=="userOptContainer") return;
+    if (playerSelection=="userOptContainer" || !playerSelection) return;
+    console.log(playerSelection);
     clearBorderChoice();
     let computerSelection = computerPlay();
     let playerWins=false;
@@ -187,15 +188,23 @@ function playRoundT(e){
 const options = document.querySelectorAll('.userOptions');
 options.forEach(option=>option.addEventListener('click',playRound));
 options.forEach(option=>option.addEventListener('mouseover',function(e){
-    if(e.target.id == "userOptContainer"){
-        for(let i=0;i<choices.length;i++){
-            const selectItem=document.getElementById(`${choices[i]}`);
-            selectItem.style.cssText="border: 8px solid transparent";
-        }
+    
+    e.stopPropagation();
+    // console.log(e);
+    if(e.target.id == "rock" || e.target.id=="paper"||e.target.id=="scissors"){
+        e.target.style.cssText="display:block";
+        e.target.style.cssText="transform:scale(1.05)";
+        // e.target.style.cssText="border: 8px solid white";
+        e.target.style.cssText="outline:none";
+        e.target.style.cssText="box-shadow: 0 0 10px white";
+        
+        
         return;
     }
     // console.log(e.target);
-    e.target.style.cssText="border: 8px solid white";
-
+    for(let i=0;i<choices.length;i++){
+        const selectItem=document.getElementById(`${choices[i]}`);
+        selectItem.style.cssText="border: 8px solid transparent";
+    }
 }));
 
