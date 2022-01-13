@@ -63,7 +63,7 @@ function playRound(e){
     
     let playerSelection=e.target.id;
     if (playerSelection=="userOptContainer" || !playerSelection) return;
-    console.log(playerSelection);
+    // console.log(playerSelection);
     clearBorderChoice();
     let computerSelection = computerPlay();
     let playerWins=false;

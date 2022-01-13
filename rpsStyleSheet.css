@@ -75,6 +75,9 @@ body{
     border-radius: 6px;
     padding: 0 10px 0 10px;
 }
+.scoreSize{
+    font-size: 30pt;
+}
 
 /*.tr:active{
     /* border: 2px solid blue;
